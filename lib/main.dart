@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:royal_cuisine/Screens/first_screen.dart';
-import 'package:royal_cuisine/cart.dart';
+import 'package:royal_cuisine/Screens/cart.dart';
 
 void main() {
   runApp(MyApp());

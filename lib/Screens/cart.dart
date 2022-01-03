@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:royal_cuisine/constants.dart';
 
-import 'Screens/first_screen.dart';
+import 'first_screen.dart';
 
 
 class Cart extends StatefulWidget {
