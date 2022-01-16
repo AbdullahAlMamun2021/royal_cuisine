@@ -1,69 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:royal_cuisine/model/items.dart';
 
 class RiceScreen extends StatelessWidget {
-  final titteList = [
-    "Chinese Fried Rice with Prawn",
-    'Thai Vegetable Fried Rice',
-    "Basil Leaf Fried Rice",
-    "Thai Fried Rice with Chicken",
-    "Royal Special Fried Rice",
-    "Thai Fried Rice with Prawn",
-    "Chinese Fried Rice with Chicken",
-    "Mexican Fried Rice",
-    "Egg Fried Rice",
+  final riceList =[
+    ItemRice("Chinese Fried Rice with Prawn", '৳ 200', "images/pizza (3).jpg"),
+    ItemRice('Thai Vegetable Fried Rice', '৳ 320',"images/pizza (1).jpg"),
+    ItemRice("Basil Leaf Fried Rice",'৳ 240' ,"images/pizza (4).jpg" ),
+    ItemRice("Thai Fried Rice with Chicken", '৳ 260',"images/pizza (5).jpg" ),
+    ItemRice( "Royal Special Fried Rice", '৳ 600' , "images/pizza (7).jpg"),
+    ItemRice("Thai Fried Rice with Prawn", '৳ 720',"images/pizza (1).png" ),
+    ItemRice("Chinese Fried Rice with Prawn", '৳ 200', "images/pizza (3).jpg"),
+    ItemRice('Thai Vegetable Fried Rice', '৳ 320',"images/pizza (1).jpg"),
+    ItemRice("Basil Leaf Fried Rice",'৳ 240' ,"images/pizza (4).jpg" ),
+    ItemRice("Thai Fried Rice with Chicken", '৳ 260',"images/pizza (5).jpg" ),
+    ItemRice( "Royal Special Fried Rice", '৳ 600' , "images/pizza (7).jpg"),
+    ItemRice("Thai Fried Rice with Prawn", '৳ 720',"images/pizza (1).png" ),
   ];
-  final priceList = [
-    '৳ 200',
-    '৳ 320',
-    '৳ 240',
-    '৳ 260',
-    '৳ 600',
-    '৳ 720',
-    '৳ 250',
-    '৳ 400',
-    '৳ 399',
-    '৳ 599',
-  ];
-  final imgList = [
-    "images/pizza (3).jpg",
-    "images/pizza (1).jpg",
-    "images/pizza (4).jpg",
-    "images/pizza (5).jpg",
-    "images/pizza (7).jpg",
-    "images/pizza (1).png",
-    "images/pizza (4).png",
-  ];
-
+ 
+  
   RiceScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemBuilder: (context, index) => ClipRRect(
-          child: ListTile(
-            leading: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imgList[index]),
-                    fit: BoxFit.cover,
-                  ),
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(8)),
-            ),
-            title: Text(
-              titteList[index],
-              style: TextStyle(color: Colors.white),
-            ),
-            subtitle: Text(
-              priceList[index],
-              style: TextStyle(color: Colors.white),
-            ),
+        itemBuilder: (context, index) 
+        {
+ final ItemRice item =riceList.elementAt(index);
+return ListTile(
+          leading: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(item.imgList),
+                  fit: BoxFit.cover,
+                ),
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(8)),
           ),
-        ),
-        itemCount: [imgList, titteList, priceList][0].length,
+          title: Text(
+            item.titteList,
+            style: TextStyle(color: Colors.white),
+          ),
+          subtitle: Text(
+          item.priceList,
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+        },
+    
+        
+        
+        itemCount: riceList.length,
       ),
     );
   }

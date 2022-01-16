@@ -8,14 +8,14 @@ import 'package:royal_cuisine/Screens/tabbar_items.dart';
 
 import '../constants.dart';
 
-class FirstScreen extends StatefulWidget {
-  const FirstScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _FirstScreenState createState() => _FirstScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _FirstScreenState extends State<FirstScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -32,12 +32,8 @@ class _FirstScreenState extends State<FirstScreen> {
               );
             },
           )),
-          // Container(color: Colors.orange,height: 20,width: 250,)
         ],
       ),
     );
   }
 }
-
-
-

@@ -19,6 +19,7 @@ class sliderApbar extends StatelessWidget {
             shrinkWrap: true,
             children: [
               CarouselSlider(
+              
                   items: [
                     Stack(
                       children: [
@@ -193,7 +194,7 @@ class sliderApbar extends StatelessWidget {
                   options: CarouselOptions(
                     viewportFraction: 1,
                     reverse: true,
-                    autoPlay: false,
+                    autoPlay: true,
                     autoPlayInterval: Duration(seconds: 3),
                     autoPlayAnimationDuration: kanimationDuration,
                     autoPlayCurve: Curves.fastOutSlowIn,
